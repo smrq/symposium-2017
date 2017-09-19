@@ -1,0 +1,40 @@
+.root {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 1rem;
+
+	:global(.hljs) {
+		font-size: 0.75rem;
+	}
+
+	strong { font-weight: normal; }
+	em { font-style: normal; }
+
+	&.light {
+		color: #383a42;
+		background-color: #fafafa;
+
+		strong { color: #a626a4; }
+		em { color: #4078f2; }
+
+		:global {
+			@import '~highlight.js/styles/atom-one-light';
+		}
+
+	}
+
+	&.dark {
+		color: #abb2bf;
+		background-color: #282c34;
+
+		strong { color: #c678dd; }
+		em { color: #61aeee; }
+
+		:global {
+			@import '~highlight.js/styles/atom-one-dark';
+		}
+	}
+}

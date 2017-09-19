@@ -1,0 +1,66 @@
+$motion-duration: 600ms;
+$motion-ease: cubic-bezier(0.75, 0, 0, 1);
+
+:export {
+	timeout: $motion-duration;
+}
+
+.root {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.dark {
+	background-color: #282c34;
+}
+
+.light {
+	background-color: #fafafa;
+}
+
+.previous {
+	.enter, .enterActive, .exit, .exitActive {
+		transition: transform $motion-duration $motion-ease;
+	}
+
+	.enter {
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	.enterActive {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.exit {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.exitActive {
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+.next {
+	.enter, .enterActive, .exit, .exitActive {
+		transition: transform $motion-duration $motion-ease;
+	}
+
+	.enter {
+		transform: translate3d(100%, 0, 0);
+	}
+
+	.enterActive {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.exit {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.exitActive {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
