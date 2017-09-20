@@ -1,0 +1,88 @@
+$motion-duration: 400ms;
+$motion-ease: cubic-bezier(0.75, 0, 0, 1);
+
+:export {
+	timeout: $motion-duration;
+}
+
+.root {
+	margin: 1rem;
+	font-size: 0.85rem;
+	position: relative;
+
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.them {
+	max-width: 75%;
+	color: #383a42;
+	background-color: #e8e8e8;
+	border-radius: 0.5em;
+	border-bottom-left-radius: 0;
+	float: left;
+	clear: both;
+	padding: 0.75em 1em;
+	margin: 0.5em;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		border: 0.5em solid transparent;
+		border-right-color: #e8e8e8;
+		border-bottom-width: 0;
+		right: 100%;
+		bottom: 0;
+	}
+
+	&.enter {
+		transform: translate3d(-1em, 0, 0);
+		opacity: 0;
+	}
+
+	&.enterActive {
+		transition: transform $motion-duration $motion-ease,
+			opacity $motion-duration $motion-ease;
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+.me {
+	max-width: 75%;
+	background-color: #4078f2;
+	color: white;
+	border-radius: 0.5em;
+	border-bottom-right-radius: 0;
+	float: right;
+	clear: both;
+	padding: 0.75em 1em;
+	margin: 0.5em;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		border: 0.5em solid transparent;
+		border-left-color: #4078f2;
+		border-bottom-width: 0;
+		left: 100%;
+		bottom: 0;
+	}
+
+	&.enter {
+		transform: translate3d(1em, 0, 0);
+		opacity: 0;
+	}
+
+	&.enterActive {
+		transition: transform $motion-duration $motion-ease,
+			opacity $motion-duration $motion-ease;
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}

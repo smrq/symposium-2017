@@ -11,7 +11,6 @@ const animationClassNames = {
 	exit: styles.exit,
 	exitActive: styles.exitActive
 };
-
 const timeout = parseInt(styles.timeout, 10);
 
 export default class SlideSwitcher extends React.PureComponent {
@@ -31,22 +30,16 @@ export default class SlideSwitcher extends React.PureComponent {
 	}
 
 	render() {
-		const { index } = this.props;
+		const { index, subIndex, onNextSlide } = this.props;
 		const { direction } = this.state;
 
-		const theme = index % 2 ? styles.light : styles.dark;
-
-		const children = React.Children.map(this.props.children, (child, i) => (
-			<CSSTransition key={i} timeout={timeout} classNames={animationClassNames}>
-				<Slide theme={i % 2 ? 'light' : 'dark'}>
-					{child}
-				</Slide>
-			</CSSTransition>
-		));
+		const Slide = this.props.slides[index];
 
 		return (
-			<TransitionGroup className={cx(styles.root, theme, styles[direction])}>
-				{children[index]}
+			<TransitionGroup className={cx(styles.root, styles[direction])}>
+				<CSSTransition key={index} timeout={timeout} classNames={animationClassNames}>
+					<Slide subIndex={subIndex} onNextSlide={onNextSlide} />
+				</CSSTransition>
 			</TransitionGroup>
 		);
 	}

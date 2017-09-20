@@ -3,9 +3,9 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import * as styles from './Slide.scss';
 
-export default function Slide({ children, theme }) {
+export default function Slide({ children, className, theme }) {
 	return (
-		<section className={cx(styles.root, styles[theme])}>
+		<section className={cx(styles.root, styles[theme], className)}>
 			{children}
 		</section>
 	);
