@@ -14,7 +14,7 @@ export default class App extends React.PureComponent {
 		super(props);
 
 		this.state = {
-			index: 1,
+			index: slides.length - 1,
 			subIndex: 0
 		};
 	}

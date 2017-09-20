@@ -1,3 +1,6 @@
+$duration: 400ms;
+$timing: ease;
+
 .headerless {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -24,6 +27,32 @@
 	position: relative;
 	font-size: 0.7em;
 	overflow: hidden;
+
+	.header {
+		width: 100%;
+		height: 10%;
+		padding: 0 1em;
+		background-color: #4078f2;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		z-index: 1;
+		position: relative;
+		transition: opacity $duration $timing;
+	}
+
+	.main {
+		width: 60%;
+		padding: 0 1em;
+		float: left;
+	}
+
+	.aside {
+		width: 40%;
+		padding: 0 1em;
+		float: right;
+	}
 }
 
 .semi {
@@ -32,12 +61,41 @@
 	left: 1em;
 	color: #383a42;
 	z-index: 0;
+	transform: scale(1);
+	transition: transform $duration $timing;
 }
 
 .slower {
 	letter-spacing: 0.5em;
 	padding-left: 0.25em;
 	padding-right: 0.25em;
+}
+
+.layoutSemi {
+	position: absolute;
+    left: 23.6em;
+    font-family: monospace;
+    top: 14.45em;
+	transform: scale(1);
+	transition: transform $duration $timing;
+}
+
+.flash {
+	transform: scale(2);
+	animation: flash ($duration * 2) $timing $duration infinite;
+}
+
+.remove {
+	display: none;
+}
+
+.fadeOut {
+	opacity: 0.2;
+}
+
+.strike {
+	text-decoration: line-through;
+	color: red;
 }
 
 .error {
@@ -49,11 +107,123 @@
 	padding: 1em;
 
 	.message {
-		font-size: 1.25em;
+		font-size: 1.75em;
 		margin-bottom: 0.5em;
 	}
 
 	.stack {
 		padding-left: 2em;
+	}
+}
+
+.split {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	position: relative;
+
+	.splitCode {
+		width: 55%;
+		display: inline-block;
+
+		pre { white-space: pre-wrap; }
+	}
+
+	.splitPreview {
+		width: 45%;
+		display: inline-flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.window {
+			width: 40vw;
+			height: 40vh;
+			font-size: 0.5em;
+			color: #383a42;
+		}
+	}
+
+	.splitCodeHighlight {
+		width: 90%;
+		display: inline-block;
+		font-size: 0.9em;
+	}
+
+	.splitCodeAnnotate {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 1.5em;
+		bottom: 1.5em;
+		font-size: 0.9em;
+		white-space: pre;
+		font-family: monospace;
+
+		> div, > span {
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+			transition: background-color $duration $timing;
+		}
+		> div > span,
+		> span > span {
+			position: absolute;
+			right: 0.5em;
+			bottom: 0.5em;
+			text-align: right;
+			font-family: 'Lato', sans-serif;
+		}
+
+		.highlight1 {
+			color: lighten(rgb(224, 108, 117), 30%);
+			background-color: rgba(224, 108, 117, 0.4);
+		}
+		.highlight2 {
+			color: lighten(rgb( 97, 174, 238), 30%);
+			background-color: rgba( 97, 174, 238, 0.4);
+		}
+		.highlight3 {
+			color: lighten(rgb(152, 195, 121), 30%);
+			background-color: rgba(152, 195, 121, 0.4);
+		}
+		.highlightOff {
+			background-color: rgba(#282c34, 0.8);
+		}
+	}
+}
+
+.zombo {
+	background: linear-gradient(#33BB77, white 15%);
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+
+	h1 {
+		font-family: serif;
+
+		:nth-child(1) { color: red; }
+		:nth-child(2) { color: orange; }
+		:nth-child(3) { color: blue; }
+		:nth-child(4) { color: rgb(153, 0, 255); }
+		:nth-child(5) { color: cyan; }
+		:nth-child(6) { color: rgb(51, 102, 255); }
+		:nth-child(7) { color: rgb(255, 153, 0); }
+		:nth-child(8) { color: lime; }
+		:nth-child(9) { color: blue; }
+	}
+}
+
+:global {
+	@keyframes flash {
+		0%, 100% {
+			opacity: 1;
+			transform: scale(2);
+		}
+		50% {
+			opacity: 0.5;
+			transform: scale(1.75);
+		}
 	}
 }

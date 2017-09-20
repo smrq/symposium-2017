@@ -1,0 +1,24 @@
+$duration: 400ms;
+$timing: ease;
+
+:export {
+	timeout: $duration;
+}
+
+.enter {
+	opacity: 0;
+}
+
+.enterActive {
+	opacity: 1;
+	transition: opacity $duration $timing;
+}
+
+.exit {
+	opacity: 1;
+}
+
+.exitActive {
+	opacity: 0;
+	transition: opacity $duration $timing;
+}

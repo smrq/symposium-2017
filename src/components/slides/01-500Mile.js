@@ -4,7 +4,7 @@ import asSlide from '../asSlide';
 import Conversation, { Me, Them } from '../Conversation';
 import * as styles from './slides.scss';
 
-export default asSlide(Contents, { subCount: 6 });
+export default asSlide(Contents, 6);
 
 function Contents({ ix }) {
 	return (

@@ -1,8 +1,8 @@
-$motion-duration: 400ms;
-$motion-ease: cubic-bezier(0.75, 0, 0, 1);
+$duration: 400ms;
+$timing: cubic-bezier(0.75, 0, 0, 1);
 
 :export {
-	timeout: $motion-duration;
+	timeout: $duration;
 }
 
 .root {
@@ -45,8 +45,8 @@ $motion-ease: cubic-bezier(0.75, 0, 0, 1);
 	}
 
 	&.enterActive {
-		transition: transform $motion-duration $motion-ease,
-			opacity $motion-duration $motion-ease;
+		transition: transform $duration $timing,
+			opacity $duration $timing;
 		transform: translate3d(0, 0, 0);
 		opacity: 1;
 	}
@@ -80,8 +80,8 @@ $motion-ease: cubic-bezier(0.75, 0, 0, 1);
 	}
 
 	&.enterActive {
-		transition: transform $motion-duration $motion-ease,
-			opacity $motion-duration $motion-ease;
+		transition: transform $duration $timing,
+			opacity $duration $timing;
 		transform: translate3d(0, 0, 0);
 		opacity: 1;
 	}
