@@ -1,10 +1,12 @@
 import React from 'react';
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light';
+import cs from 'react-syntax-highlighter/dist/languages/cs';
 import javascript from 'react-syntax-highlighter/dist/languages/javascript';
 import xml from 'react-syntax-highlighter/dist/languages/xml';
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/styles';
 import ErrorBoundary from './ErrorBoundary';
 
+registerLanguage('cs', cs);
 registerLanguage('javascript', javascript);
 registerLanguage('html', xml);
 

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html {
+	font-size: 200%;
+	font-size: 4vmin;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	overflow: hidden;
+	font-family: 'Lato', sans-serif;
+}
+
+.frame {
+	max-width: 30em;
+	margin: 0 auto;
+	height: 100%;
+	overflow: scroll;
+	padding: 1em;
+}
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+	width: 11px;
+}
+
+::-webkit-scrollbar:horizontal {
+	height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 2px solid white; /* should match background, can't be transparent */
+	background-color: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.loading {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.again {
+	display: none;
+}
+
+.loading, .again {
+	margin: 2em 1em;
+}
+
+.message {
+	color: cornflowerblue;
+	margin-right: 1em;
+}
+
+.outer {
+	flex: 1;
+	background-color: #eee;
+	height: 0.75em;
+	position: relative;
+	border-radius: 0.25em;
+	overflow: hidden;
+}
+
+.inner {
+	background-color: cornflowerblue;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+p {
+	font-size: 0.65em;
+}

@@ -17,9 +17,9 @@ function Contents({ ix, subIndex }) {
 					<Highlight language="html" theme="dark">{full2}</Highlight>
 				</div>
 				<div className={styles.splitCodeAnnotate}>
-					{ix(1) && <div className={styles.highlight1}><span>Time to first paint</span>{'\n\n\n\n\n\n\n\n\n'}</div>}
-					{ix(2) && <div className={styles.highlight2}><span>Time to full screen<br/>Time to first meaningful paint</span>{'\n\n\n\n\n'}</div>}
-					{ix(3) && <div className={styles.highlight3}><span>Page load time</span>{'\n\n\n\n'}</div>}
+					<div className={cx(ix(1) && styles.highlight1)}><span>Time to first paint</span>{'\n\n\n\n\n\n\n\n\n'}</div>
+					<div className={cx(ix(2) && styles.highlight2)}><span>Time to full screen<br/>Time to first meaningful paint</span>{'\n\n\n\n\n'}</div>
+					<div className={cx(ix(3) && styles.highlight3)}><span>Page load time</span>{'\n\n\n\n'}</div>
 				</div>
 			</div>
 		</Slide>

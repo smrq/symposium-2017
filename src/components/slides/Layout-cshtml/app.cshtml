@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- et cetera -->
+</head>
+<body>
+	<div id="app"
+		data-init="@JsonConvert.SerializeObject(Model)">
+	</div>
+	<script src="bundle.js"></script>
+	<script>
+		const app = document.getElementById('app');
+		const initialData = JSON.parse(app.dataset.init);
+		ReactDOM.render(app,
+			<App initialData={initialData} />
+		);
+	</script>
+</body>
+</html>

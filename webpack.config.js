@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const DEBUG = !process.argv.includes('--release');
 
@@ -76,6 +77,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ hash: true })
+		new HtmlWebpackPlugin({ hash: true }),
+		new CopyWebpackPlugin([{ context: 'assets', from: '*' }])
 	]
 };

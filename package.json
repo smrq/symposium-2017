@@ -14,6 +14,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "express": "^4.15.4",
+    "lorem-ipsum": "^1.0.4",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-rc.3",
@@ -27,6 +28,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",

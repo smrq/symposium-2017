@@ -15,6 +15,9 @@ $timing: ease;
 .cite {
 	position: absolute;
 	bottom: 1em;
+	width: 100%;
+	text-align: center;
+	left: 0;
 }
 
 .window {
@@ -73,11 +76,18 @@ $timing: ease;
 
 .layoutSemi {
 	position: absolute;
-    left: 23.6em;
-    font-family: monospace;
-    top: 14.45em;
+	left: 22.1em;
+	font-family: monospace;
+	top: 10.75em;
 	transform: scale(1);
-	transition: transform $duration $timing;
+	transition: transform $duration $timing,
+		left ($duration * 3) ease,
+		top ($duration * 3) ease;
+
+	&.inBody {
+		left: 3em;
+		top: 14.5em;
+	}
 }
 
 .flash {
@@ -163,8 +173,10 @@ $timing: ease;
 
 		> div, > span {
 			position: relative;
+			color: rgba(0, 0, 0, 0);
 			background-color: rgba(0, 0, 0, 0);
-			transition: background-color $duration $timing;
+			transition: color $duration $timing,
+				background-color $duration $timing;
 		}
 		> div > span,
 		> span > span {

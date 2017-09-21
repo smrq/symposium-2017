@@ -11,9 +11,9 @@ const animationClassNames = {
 };
 const timeout = parseInt(styles.timeout, 10);
 
-export default function Fade({ children, n, subIndex }) {
+export default function Fade({ children, n, subIndex, ...props }) {
 	return (
-		<TransitionGroup>
+		<TransitionGroup {...props}>
 			{subIndex >= n && (
 				<CSSTransition timeout={timeout} classNames={animationClassNames}>
 					{children}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- et cetera -->
+</head>
+<body>
+	@Html.React("App", new { initialData = Model });
+
+	<script src="bundle.js"></script>
+
+	@Html.ReactInitJavaScript();
+</body>
+</html>

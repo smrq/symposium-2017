@@ -38,3 +38,7 @@ cite {
 	font-size: 0.8rem;
 	line-height: 1rem;
 }
+
+pre + pre {
+	margin-top: -1em;
+}

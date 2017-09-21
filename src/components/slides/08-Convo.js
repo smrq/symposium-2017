@@ -14,7 +14,7 @@ function Contents({ ix }) {
 				<Me>How could it possibly be the semicolon?</Me>
 				<Them>I'm putting it back.</Them>
 				<Me>But that can't be it.</Me>
-				{ix(1) && <Me>It can't be the semicolon.</Me>}
+				{ix(1) && <Me>But that CAN'T be it...</Me>}
 			</Conversation>
 		</Slide>
 	)
