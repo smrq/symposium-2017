@@ -9,7 +9,7 @@ import * as styles from './slides.scss';
 import layout from '!raw-loader!./Layout-cshtml/head.cshtml';
 import layout2 from '!raw-loader!./Layout-cshtml/head2.cshtml';
 
-export default asSlide(Contents, 4);
+export default asSlide(Contents, 5);
 
 function Contents({ ix, subIndex }) {
 	return (
@@ -18,12 +18,12 @@ function Contents({ ix, subIndex }) {
 			<Fade n={1} subIndex={subIndex}>
 				<div style={{position: 'relative'}}>
 					<Highlight language="html" theme="dark">
-						{ix(2) ? layout2 : layout}
+						{ix(3) ? layout2 : layout}
 					</Highlight>
 					<div className={cx(styles.layoutSemi, styles.flash, ix(2) && styles.inBody)}>;</div>
 				</div>
 			</Fade>
-			<Fade n={3} subIndex={subIndex}>
+			<Fade n={4} subIndex={subIndex}>
 				<div style={{ position: 'absolute', bottom: '1.5em', right: '3.5em'}}>
 					<Highlight language="js" theme="dark">{'document.body => <body>'}</Highlight>
 				</div>

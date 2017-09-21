@@ -10,6 +10,7 @@ function Contents({ ix }) {
 	return (
 		<Slide theme="light" className={styles.headerless}>
 			<Conversation>
+				<Them>What if it was the semicolon?</Them>
 				<Me>There's no way it's the semicolon.</Me>
 				<Me>How could it possibly be the semicolon?</Me>
 				<Them>I'm putting it back.</Them>

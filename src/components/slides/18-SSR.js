@@ -16,7 +16,7 @@ export default asSlide(Contents, 5);
 function Contents({ ix }) {
 	return (
 		<Slide theme="dark">
-			<h1>Reaping the benefits</h1>
+			<h1>Applying optimizations</h1>
 			<div style={{ fontSize: '0.85em' }}>
 				<Highlight language="html" theme="dark">{
 					ix(4) ? appSsrJk :
